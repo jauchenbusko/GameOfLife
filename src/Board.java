@@ -19,6 +19,10 @@ public class Board {
         return board[width][length];
     }
 
+    public void setLifeStatus(boolean lifeStatus, int length, int width){
+        board[width][length] = lifeStatus;
+    }
+
     public void changeLifeStatus(int length, int width){
         board[width][length] = !getLifeStatus(length,width);
     }
@@ -164,20 +168,8 @@ public class Board {
 
         board.display();
 
-        System.out.println("Alive neighbours for 2 2 sell " + board.checkAliveNeighbors(2,2));
-        System.out.println("Alive neighbours for 2 1 sell " + board.checkAliveNeighbors(2,1));
-        System.out.println("Alive neighbours for 3 3 sell " + board.checkAliveNeighbors(3,3));
-        System.out.println("Alive neighbours for 3 1 sell " + board.checkAliveNeighbors(3,1));
-        System.out.println("Alive neighbours for 1 4 sell " + board.checkAliveNeighbors(1,3));
-        System.out.println("Alive neighbours for 0 3 sell " + board.checkAliveNeighbors(0,3));
-        System.out.println("Alive neighbours for 5 2 sell " + board.checkAliveNeighbors(5,2));
-        System.out.println("Alive neighbours for 3 0 sell " + board.checkAliveNeighbors(3,0));
-        System.out.println("Alive neighbours for 4 4 sell " + board.checkAliveNeighbors(4,4));
-        System.out.println("Alive neighbours for 3 4 sell " + board.checkAliveNeighbors(3,4));
-        System.out.println("Alive neighbours for 0 0 sell " + board.checkAliveNeighbors(0,0));
-        System.out.println("Alive neighbours for 0 4 sell " + board.checkAliveNeighbors(0,4));
-        System.out.println("Alive neighbours for 4 0 sell " + board.checkAliveNeighbors(4,0));
-        System.out.println("Alive neighbours for 4 4 sell " + board.checkAliveNeighbors(4,4));
+        System.out.println(board.checkAliveNeighbors(2,2));
+
     }
 
 }

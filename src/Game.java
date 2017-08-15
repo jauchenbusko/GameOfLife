@@ -3,37 +3,69 @@
 public class Game {
 
     private Board gameboard;
-    int l,w;
+    int length,width;
+    private final boolean Alive = true;
 
-    public Game(int l, int w){
-        gameboard = new Board(l,w);
-        this.l = l;
-        this.w = w;
+    public Game(int length, int width){
+        gameboard = new Board(length,width);
+        this.length = length;
+        this.width = width;
     }
 
     public void setAlive(int l, int w){
         if(!gameboard.getLifeStatus(l,w))
             gameboard.changeLifeStatus(l, w);
         else
-            System.out.println("Cell is already alive");
+            System.out.println("\nCell is already alive");
     }
+
+    public void print(){
+        gameboard.display();
+    }
+
 
 
     public void nextMove(){
 
-        Board temp = gameboard;
+        Board temp = new Board(length, width);
 
-        for (int i = 0; i < w; i++) {
-            for (int j = 0; j < l; j++) {
+        for (int i = 0; i < width; i++) {
+            for (int j = 0; j < length; j++) {
+                if (!gameboard.getLifeStatus(j,i) && gameboard.checkAliveNeighbors(j, i) != 3)
+                    temp.setLifeStatus(!Alive,j,i);
 
+                else if(!gameboard.getLifeStatus(j,i) && gameboard.checkAliveNeighbors(j, i) == 3)
+                    temp.setLifeStatus(Alive,j,i);
+
+                else if (gameboard.getLifeStatus(j,i) && gameboard.checkAliveNeighbors(j,i) < 2)
+                    temp.setLifeStatus(!Alive,j,i);
+
+                else if (gameboard.getLifeStatus(j,i)
+                        && gameboard.checkAliveNeighbors(j,i) >= 2
+                        && gameboard.checkAliveNeighbors(j,i) < 4)
+                   temp.setLifeStatus(Alive,j,i);
+
+                else if (gameboard.getLifeStatus(j,i) && gameboard.checkAliveNeighbors(j,i) > 4)
+                    temp.setLifeStatus(!Alive,j,i);
             }
         }
 
+       gameboard = temp;
     }
 
     public static void main(String[] args){
 
-
+        Game game = new Game(5, 5);
+        game.setAlive(1,1);
+        game.setAlive(1,2);
+        game.setAlive(1,3);
+        game.print();
+        game.nextMove();
+        System.out.println();
+        game.print();
+        game.nextMove();
+        System.out.println();
+        game.print();
 
     }
 
