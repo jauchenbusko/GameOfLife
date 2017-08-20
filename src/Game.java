@@ -55,14 +55,62 @@ public class Game {
 
     public static void main(String[] args){
 
-        Game game = new Game(5, 5);
-        game.setAlive(1,1);
-        game.setAlive(1,2);
-        game.setAlive(1,3);
+        Game game = new Game(20, 20);
+        game.setAlive(9,8);
+        game.setAlive(9,9);
+        game.setAlive(9,10);
+        game.setAlive(10,9);
+        game.setAlive(10,9);
+        game.setAlive(10,9);
+
         game.print();
+
         game.nextMove();
         System.out.println();
         game.print();
+
+        game.nextMove();
+        System.out.println();
+        game.print();
+
+        game.nextMove();
+        System.out.println();
+        game.print();
+
+        game.nextMove();
+        System.out.println();
+        game.print();
+
+        game.nextMove();
+        System.out.println();
+        game.print();
+
+        game.nextMove();
+        System.out.println();
+        game.print();
+
+        game.nextMove();
+        System.out.println();
+        game.print();
+
+        game.nextMove();
+        System.out.println();
+        game.print();
+
+        game.nextMove();
+        System.out.println();
+        game.print();
+
+        game.nextMove();
+        System.out.println();
+        game.print();
+
+
+        game.nextMove();
+        System.out.println();
+        game.print();
+
+
         game.nextMove();
         System.out.println();
         game.print();

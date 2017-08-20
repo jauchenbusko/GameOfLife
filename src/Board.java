@@ -139,38 +139,5 @@ public class Board {
        return 0;
     }
 
-
-
-
-
-
-    public static void main(String[] args){
-
-        Board board = new Board(6,5);
-
-        System.out.println(board.getLifeStatus(2,2));
-        board.changeLifeStatus(2,1);
-        board.changeLifeStatus(3,2);
-        board.changeLifeStatus(3,0);
-        board.changeLifeStatus(4,0);
-        board.changeLifeStatus(0,3);
-        board.changeLifeStatus(2,2);
-        board.changeLifeStatus(1,2);
-        board.changeLifeStatus(4,1);
-        board.changeLifeStatus(4,2);
-        board.changeLifeStatus(5,2);
-        board.changeLifeStatus(3,3);
-        board.changeLifeStatus(4,4);
-        board.changeLifeStatus(0,1);
-        board.changeLifeStatus(1,3);
-
-        System.out.println(board.getLifeStatus(2,1));
-
-        board.display();
-
-        System.out.println(board.checkAliveNeighbors(2,2));
-
-    }
-
 }
 
